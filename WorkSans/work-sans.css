@@ -1,0 +1,119 @@
+@font-face{
+    font-family: 'Work Sans';
+    font-weight: 100;
+    font-style: normal;
+    src: url('eot/WorkSans-Hairline.eot');
+    src: local('Work Sans Hairline'),
+         url('ttf/WorkSans-Hairline.ttf') format('truetype'),
+         url('eot/WorkSans-Hairline.eot') format('embedded-opentype'),
+         url('woff/WorkSans-Hairline.woff') format('woff'),
+         url('woff2/WorkSans-Hairline.woff2') format('woff2');
+    }
+
+@font-face{
+    font-family: 'Work Sans';
+    font-weight: 100;
+    font-style: normal;
+    src: url('eot/WorkSans-Thin.eot');
+    src: local('Work Sans Thin'),
+         url('ttf/WorkSans-Thin.ttf') format('truetype'),
+         url('eot/WorkSans-Thin.eot') format('embedded-opentype'),
+         url('woff/WorkSans-Thin.woff') format('woff'),
+         url('woff2/WorkSans-Thin.woff2') format('woff2');
+    }
+
+@font-face{
+    font-family: 'Work Sans';
+    font-weight: 200;
+    font-style: normal;
+    src: url('eot/WorkSans-ExtraLight.eot');
+    src: local('Work Sans ExtraLight'),
+         url('ttf/WorkSans-ExtraLight.ttf') format('truetype'),
+         url('eot/WorkSans-ExtraLight.eot') format('embedded-opentype'),
+         url('woff/WorkSans-ExtraLight.woff') format('woff'),
+         url('woff2/WorkSans-ExtraLight.woff2') format('woff2');
+    }
+
+@font-face{
+    font-family: 'Work Sans';
+    font-weight: 300;
+    font-style: normal;
+    src: url('eot/WorkSans-Light.eot');
+    src: local('Work Sans Light'),
+         url('ttf/WorkSans-Light.ttf') format('truetype'),
+         url('eot/WorkSans-Light.eot') format('embedded-opentype'),
+         url('woff/WorkSans-Light.woff') format('woff'),
+         url('woff2/WorkSans-Light.woff2') format('woff2');
+    }
+
+@font-face{
+    font-family: 'Work Sans';
+    font-weight: 400;
+    font-style: normal;
+    src: url('eot/WorkSans-Regular.eot');
+    src: local('Work Sans Regular'),
+         url('ttf/WorkSans-Regular.ttf') format('truetype'),
+         url('eot/WorkSans-Regular.eot') format('embedded-opentype'),
+         url('woff/WorkSans-Regular.woff') format('woff'),
+         url('woff2/WorkSans-Regular.woff2') format('woff2');
+    }
+
+@font-face{
+    font-family: 'Work Sans';
+    font-weight: 500;
+    font-style: normal;
+    src: url('eot/WorkSans-Medium.eot');
+    src: local('Work Sans Medium'),
+         url('ttf/WorkSans-Medium.ttf') format('truetype'),
+         url('eot/WorkSans-Medium.eot') format('embedded-opentype'),
+         url('woff/WorkSans-Medium.woff') format('woff'),
+         url('woff2/WorkSans-Medium.woff2') format('woff2');
+    }
+
+@font-face{
+    font-family: 'Work Sans';
+    font-weight: 600;
+    font-style: normal;
+    src: url('eot/WorkSans-SemiBold.eot');
+    src: local('Work Sans SemiBold'),
+         url('ttf/WorkSans-SemiBold.ttf') format('truetype'),
+         url('eot/WorkSans-SemiBold.eot') format('embedded-opentype'),
+         url('woff/WorkSans-SemiBold.woff') format('woff'),
+         url('woff2/WorkSans-SemiBold.woff2') format('woff2');
+    }
+
+@font-face{
+    font-family: 'Work Sans';
+    font-weight: 700;
+    font-style: normal;
+    src: url('eot/WorkSans-Bold.eot');
+    src: local('Work Sans Bold'),
+         url('ttf/WorkSans-Bold.ttf') format('truetype'),
+         url('eot/WorkSans-Bold.eot') format('embedded-opentype'),
+         url('woff/WorkSans-Bold.woff') format('woff'),
+         url('woff2/WorkSans-Bold.woff2') format('woff2');
+    }
+
+@font-face{
+    font-family: 'Work Sans';
+    font-weight: 800;
+    font-style: normal;
+    src: url('eot/WorkSans-ExtraBold.eot');
+    src: local('Work Sans ExtraBold'),
+         url('ttf/WorkSans-ExtraBold.ttf') format('truetype'),
+         url('eot/WorkSans-ExtraBold.eot') format('embedded-opentype'),
+         url('woff/WorkSans-ExtraBold.woff') format('woff'),
+         url('woff2/WorkSans-ExtraBold.woff2') format('woff2');
+    }
+
+@font-face{
+    font-family: 'Work Sans';
+    font-weight: 900;
+    font-style: normal;
+    src: url('eot/WorkSans-Black.eot');
+    src: local('Work Sans Black'),
+         url('ttf/WorkSans-Black.ttf') format('truetype'),
+         url('eot/WorkSans-Black.eot') format('embedded-opentype'),
+         url('woff/WorkSans-Black.woff') format('woff'),
+         url('woff2/WorkSans-Black.woff2') format('woff2');
+    }
