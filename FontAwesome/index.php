@@ -1,11 +1,9 @@
 <?php
-$cmcPath	= 'cmClasses/';
-$cmcVersion	= '';
 $darkMode	= !TRUE;
 
 /*  --  NO NEED TO CHANGE BELOW  --  */
-require_once $cmcPath.$cmcVersion.'/autoload.php5';
 class FontAwesomeIndex{
+
 	public function __construct( $darkMode = FALSE ){
 		$list	= $this->read();
 		$this->render( $list, $darkMode );
@@ -24,27 +22,32 @@ class FontAwesomeIndex{
 		return $list;
 	}
 
-	protected function render( $iconClasses, $darkMode = FALSe ){
+	protected function render( $iconClasses, $darkMode = FALSE ){
 		$list	= array();
 		foreach( $iconClasses as $item ){
-			$icon	= UI_HTML_Tag::create( 'i', '', array(
-				'class'	=> 'fa fa-2x fa-'.$item.( $darkMode ? ' fa-inverse' :'' ),
-				'title'	=> $item,
-			) );
-			$list[]	= UI_HTML_Tag::create( 'li', $icon, array(
-				'class' => 'icon-container',
-				'id'	=> 'icon-'.$item,
-			) );
+			$icon	= '<i class="fa fa-2x fa-'.$item.( $darkMode ? ' fa-inverse' :'' ).'" title="'.$item.'"></i>';
+			$list[]	= '<li class="icon-container" id="icon-'.$item.'">'.$icon.'</li>';
 		}
-		$list	= UI_HTML_Tag::create( 'ul', $list, array(
-			'id'	=> 'icon-matrix',
-			'class'	=> 'unstyled',
-		) );
-
+		$list	= '<ul id="icon-matrix" class="unstyled">'.join( $list ).'</ul>';
 		$style	= '
 body.dark {
 	background-color: rgba(0,0,0,1);
-	color: rgba(255,255,255,0.75);
+	color: rgba(255,255,255,0.8);
+	}
+#icon-matrix .fa {
+	transition: all 0.2s;
+	opacity: 0.8;
+	color: rgba(0,0,0,0.8);
+	}
+#icon-matrix .fa-inverse {
+	color: rgba(255,255,255,0.8);
+	}
+#icon-matrix .fa:hover {
+	opacity: 1;
+	color: black;
+	}
+#icon-matrix .fa-inverse:hover {
+	color: white;
 	}
 #icon-matrix .icon-container {
 	float: left;
@@ -53,13 +56,13 @@ body.dark {
 	vertical-align: middle;
 	text-align: center;
 	margin: 3px;
-}
-.fa-2x {
+	}
+#icon-matrix .fa-2x {
 	line-height: 2em;
-}
-.fa-4x {
+	}
+#icon-matrix .fa-4x {
 	line-height: 1em;
-}
+	}
 ';
 		$script	= '
 $(document).ready(function(){
@@ -80,30 +83,34 @@ $(document).ready(function(){
 		});
 	}).focus();
 });';
-		$body	= '
-<div class="container">
-	<h2>Font Awesome <span class="muted">Index</span></h2>
-	<div class="row-fluid">
-		<div class="span12">
-			<input type="search" id="search" placeholder="search"></input>
-		</div>
-	</div>
-	<div class="row-fluid">
-		<div class="span12">
-			'.$list.'
-		</div>
-	</div>
-</div>';
 
-		$page	= new UI_HTML_PageFrame();
-		$page->addStylesheet( '/lib/cmStyles/bootstrap.min.css' );
-		$page->addStylesheet( 'font-awesome.min.css' );
-		$page->addJavaScript( '/lib/cmScripts/jquery/1.10.2.min.js' );
-		$page->addJavaScript( '/lib/cmScripts/bootstrap.min.js' );
-		$page->addHead( UI_HTML_Tag::create( 'style', $style ) );
-		$page->addHead( UI_HTML_Tag::create( 'script', $script ) );
-		$page->addBody( $body );
-		print( $page->build( array( 'class' => $darkMode ? 'dark' : 'bright' ) ) );
+		$cdn	= 'https://cdn.ceusmedia.de/';
+		print '
+<html>
+	<head>
+		<link rel="stylesheet" href="'.$cdn.'css/bootstrap.min.css"></link>
+		<link rel="stylesheet" href="font-awesome.min.css"></link>
+		<script src="'.$cdn.'js/jquery/1.10.2.min.js"></script>
+		<script src="'.$cdn.'js/bootstrap.min.js"></script>
+		<style>'.$style.'</style>
+		<script>'.$script.'</script>
+	</head>
+	<body class="'.( $darkMode ? 'dark' : 'bright' ).'">
+		<div class="container">
+			<h2>Font Awesome <span class="muted">Index</span></h2>
+			<div class="row-fluid">
+				<div class="span12">
+					<input type="search" id="search" placeholder="search"></input>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span12">
+					'.$list.'
+				</div>
+			</div>
+		</div>
+	</body>
+</html>';
 	}
 
 }
