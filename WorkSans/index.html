@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdn.ceusmedia.de//css/bootstrap/4.4.1/bootstrap.min.css"></link>
+		<link rel="stylesheet" href="work-sans.css"></link>
+		<script src="https://cdn.ceusmedia.de/js/jquery/1.10.2.min.js"></script>
+		<script>
+function setFontAttribute(){
+	var btn = jQuery(this);
+	var attr = btn.data('attr');
+	var value = btn.data('value');
+	jQuery("#text-container").css('font-'+attr, value);
+	btn.parent().children('.btn').removeClass('active');
+	btn.addClass('active');
+}
+
+jQuery(document).ready(function(){
+	jQuery("button.set-font-attr").on("click", setFontAttribute);
+	jQuery("button.set-font-style").on("click", setFontStyle);
+})
+		
+		
+		</script>
+		<style>
+body {
+	background-color: #eee;
+	}
+.btn-group-vertical {
+	width: 100%;
+	}
+.btn-group-vertical > .btn-light {
+	background-color: #fff;
+	}
+#text-container {
+	font-family: "Work Sans";
+	padding: 1em 1.5em;
+	background-color: #fff;
+	border-radius: 0.3em;
+	}
+#text-container div.showcase {
+	margin-bottom: 1em;
+	line-height: 1.3em;
+	}
+		
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h2 class="display-4">Work Sans</h2>
+			<div class="row-fluid row">
+				<div class="span3 col-md-3">
+					<h4 >Weight</h4>
+					<div class="not-btn-group btn-group-vertical">
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="weight" data-value="50">Hairline <small class="text-muted">(<100)</small></button>
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="weight" data-value="100">Thin <small class="text-muted">(100)</small></button>
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="weight" data-value="200">ExtraLight <small class="text-muted">(200)</small></button>
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="weight" data-value="300">Light <small class="text-muted">(300)</small></button>
+						<button type="button" class="btn btn-light btn-block set-font-attr active" data-attr="weight" data-value="400">Regular <small class="text-muted">(400)</small></button>
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="weight" data-value="500">Medium <small class="text-muted">(500)</small></button>
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="weight" data-value="600">SemiBold <small class="text-muted">(600)</small></button>
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="weight" data-value="700">Bold <small class="text-muted">(700)</small></button>
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="weight" data-value="800">ExtraBold <small class="text-muted">(800)</small></button>
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="weight" data-value="900">Black <small class="text-muted">(900)</small></button>
+					</div>
+				</div>
+				<div class="span9 col-md-9">
+					<h4>Sizes: 1em, 1.5em and 2em</h4>
+					<div id="text-container">
+						<div class="showcase" style="font-size: 1em">
+							ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+							abcdefghijklmnopqrstuvwxyz<br/>
+							1234567890 °!"§$%&/()=?;:_,.-,+#*'\~’<br/>
+						</div>
+						<div class="showcase" style="font-size: 1.5em">
+							ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+							abcdefghijklmnopqrstuvwxyz<br/>
+							1234567890 °!"§$%&/()=?;:_,.-,+#*'\~’<br/>
+						</div>
+						<div class="showcase" style="font-size: 2em">
+							ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+							abcdefghijklmnopqrstuvwxyz<br/>
+							1234567890 °!"§$%&/()=?;:_,.-,+#*'\~’<br/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
