@@ -1,220 +1,117 @@
-<!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-    <title>Fira</title>
-    <link rel="stylesheet" href="fira.css">
-    <style>
+	<head>
+		<meta charset="utf-8">
+		<title>Fira - Fonts - Assets - CDN</title>
+		<link rel="stylesheet" href="https://cdn.ceusmedia.de//css/bootstrap/4.4.1/bootstrap.min.css"></link>
+		<link rel="stylesheet" href="fira.css"></link>
+		<script src="https://cdn.ceusmedia.de/js/jquery/1.10.2.min.js"></script>
+		<script>
+function setFontAttribute(){
+	var btn = jQuery(this);
+	var attr = btn.data('attr');
+	var value = btn.data('value');
+	jQuery(".showcase").css('font-'+attr, value);
+	btn.parent().children('.btn').removeClass('active');
+	btn.addClass('active');
+}
 
-        body {
-            font-family: sans-serif;
-            font-weight: 300;
-            overflow-x: hidden;
-        }
-        article {
-            margin: 0 auto;
-            max-width: 800px;
-            padding: 1em;
-        }
-        h1, .glyph {
-            font-family: 'Fira Sans';
-            font-size: 40px;
-        }
-        p {
-            font-family: 'Fira Sans';
-            font-size: 32px;
-            padding: 0 1em;
-        }
-        .mono {
-            font-family: 'Fira Mono';
-        }
-        .ribbon {
-            background: none repeat scroll 0% 0% rgb(34, 34, 34);
-            color: white;
-            display: block;
-            font: 400 13px 'Fira Sans';
-            padding: 8px 150px;
-            position: absolute;
-            right: 0px;
-            text-decoration: none;
-            top: 0px;
-            -webkit-transform: translate(50%, -50%) rotate(45deg) translateY(72px);
-            -moz-transform: translate(50%, -50%) rotate(45deg) translateY(72px);
-            -ms-transform: translate(50%, -50%) rotate(45deg) translateY(72px);
-            -o-transform: translate(50%, -50%) rotate(45deg) translateY(72px);
-            transform: translate(50%, -50%) rotate(45deg) translateY(72px);
-            white-space: nowrap;
-        }
-        .glyph {
-            margin: 1em auto;
-            text-align: center;
-            font-size: 72px;
-        }
+jQuery(document).ready(function(){
+	jQuery("button.set-font-attr").on("click", setFontAttribute);
+	jQuery("button.set-font-style").on("click", setFontStyle);
+})
+		</script>
+		<style>
+body {
+	background-color: #eee;
+	}
+.btn-group-vertical {
+	width: 100%;
+	}
+.btn-group-vertical > .btn-light {
+	background-color: #fff;
+	}
+.text-container {
+	font-family: "Fira Sans";
+	padding: 1em 1.5em;
+	background-color: #fff;
+	border-radius: 0.3em;
+	}
+.text-container div.showcase {
+	margin-bottom: 1em;
+	line-height: 1.3em;
+	padding: 5px 10px;
+	}
+h4 {
+	margin-top: 0.5em;
+	}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h2 class="display-4">Fira <small class="text-muted">Sans & Mono</small></h2>
+			<a href="mozilla_demo.html">Official Mozilla demo page</a>
+			<div class="row-fluid row">
+				<div class="span3 col-md-3">
+					<h4 >Weight</h4>
+					<div class="not-btn-group btn-group-vertical">
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="weight" data-value="100">Hair <small class="text-muted">(100)</small></button>
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="weight" data-value="200">UltraLight <small class="text-muted">(200)</small></button>
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="weight" data-value="300">Light <small class="text-muted">(300)</small></button>
+						<button type="button" class="btn btn-light btn-block set-font-attr active" data-attr="weight" data-value="400">Regular <small class="text-muted">(400)</small></button>
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="weight" data-value="500">Medium <small class="text-muted">(500)</small></button>
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="weight" data-value="600">Semibold <small class="text-muted">(600)</small></button>
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="weight" data-value="700">Bold <small class="text-muted">(700)</small></button>
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="weight" data-value="800">ExtraBold <small class="text-muted">(800)</small></button>
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="weight" data-value="900">Heavy <small class="text-muted">(900)</small></button>
+					</div>
+					<h4>Style</h4>
+					<div class="not-btn-group btn-group-vertical">
+						<button type="button" class="btn btn-light btn-block set-font-attr active" data-attr="style" data-value="normal">Normal</button>
+						<button type="button" class="btn btn-light btn-block set-font-attr" data-attr="style" data-value="italic">Italic</button>
+					</div>
+				</div>
+				<div class="span9 col-md-9">
+					<h4>Sans</h4>
+					<div class="text-container">
+						<div contenteditable spellcheck="false" class="showcase" style="font-size: 1em">
+							ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+							abcdefghijklmnopqrstuvwxyz<br/>
+							1234567890 °!"§$%&/()=?;:_,.-,+#*'\~’<br/>
+						</div>
+						<div contenteditable spellcheck="false" class="showcase" style="font-size: 1.5em">
+							ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+							abcdefghijklmnopqrstuvwxyz<br/>
+							1234567890 °!"§$%&/()=?;:_,.-,+#*'\~’<br/>
+						</div>
+						<div contenteditable spellcheck="false" class="showcase" style="font-size: 2em">
+							ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+							abcdefghijklmnopqrstuvwxyz<br/>
+							1234567890 °!"§$%&/()=?;:_,.-,+#*'\~’<br/>
+						</div>
+					</div>
 
-
-        @media (max-width: 640px) {
-            p {
-                padding: 0;
-                font-size: 18px;
-            }
-        }
-
-    </style>
-  </head>
-  <body>
-    <article>
-        <h1>Fira Sans</h1>
-
-
-        <h2>Hair</h2>
-        <p contenteditable style="font-weight: 100;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-        <p contenteditable style="font-weight: 100; font-style: italic;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-
-        <h2>UltraLight</h2>
-        <p contenteditable style="font-weight: 200;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-        <p contenteditable style="font-weight: 200; font-style: italic;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-
-        <h2>Light</h2>
-        <p contenteditable style="font-weight: 300;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-        <p contenteditable style="font-weight: 300; font-style: italic;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-
-        <h2>Regular</h2>
-        <p contenteditable style="font-weight: 400;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-        <p contenteditable style="font-weight: 400; font-style: italic;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-
-        <h2>Medium</h2>
-        <p contenteditable style="font-weight: 500;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-        <p contenteditable style="font-weight: 500; font-style: italic;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-
-        <h2>SemiBold</h2>
-        <p contenteditable style="font-weight: 600;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-        <p contenteditable style="font-weight: 600; font-style: italic;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-
-        <h2>Bold</h2>
-        <p contenteditable style="font-weight: 700;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-        <p contenteditable style="font-weight: 700; font-style: italic;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-
-        <h2>ExtraBold</h2>
-        <p contenteditable style="font-weight: 800;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-        <p contenteditable style="font-weight: 800; font-style: italic;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-
-        <h2>Heavy</h2>
-        <p contenteditable style="font-weight: 900;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-        <p contenteditable style="font-weight: 900; font-style: italic;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-
-        <h1 class="mono">Fira Mono</h1>
-
-        <h2>Regular</h2>
-        <p contenteditable class="mono" style="font-weight: 400;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-
-        <h2>Bold</h2>
-        <p contenteditable class="mono" style="font-weight: 600;">
-            The quick brown Firefox jumps over the lazy dog.<br>
-            abcdefghijklmnopqrstuvwxyz<br>
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-            1234567890!@#$%^&*()`~{}[]+=:;'"‘’“”
-        </p>
-
-        <a class="ribbon" href="https://github.com/mozilla/Fira">Fira on GitHub</a>
-
-        <div class="glyph"><span style="color:#f00">&#xe001;</span><span style="color:#fff">&#xe002;</span>&#xe003;</div>
-
-    </article>
-  </body>
+					<h4>Mono</h4>
+					<div class="text-container">
+						<div style="font-family: Fira Mono">
+							<div contenteditable spellcheck="false" class="showcase" style="font-size: 1em">
+								ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+								abcdefghijklmnopqrstuvwxyz<br/>
+								1234567890 °!"§$%&/()=?;:_,.-,+#*'\~’<br/>
+							</div>
+							<div contenteditable spellcheck="false" class="showcase" style="font-size: 1.5em">
+								ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+								abcdefghijklmnopqrstuvwxyz<br/>
+								1234567890 °!"§$%&/()=?;:_,.-,+#*'\~’<br/>
+							</div>
+							<div contenteditable spellcheck="false" class="showcase" style="font-size: 2em">
+								ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+								abcdefghijklmnopqrstuvwxyz<br/>
+								1234567890 °!"§$%&/()=?;:_,.-,+#*'\~’<br/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
